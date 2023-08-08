@@ -28,6 +28,6 @@ WantedBy=multi-user.target
 
 EOT
 
-systemctl daemon-reload
-systemctl start nexus
-systemctl enable nexus
+sudo systemctl daemon-reload
+sudo systemctl start nexus
+sudo systemctl enable nexus
