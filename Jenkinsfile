@@ -19,8 +19,11 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'cd java-app'
-                sh 'mvn -s ./settings.xml -DskipTests install'
+                dir('java-app'){
+                    sh 'mvn -s ./settings.xml -DskipTests install'
+
+                }
+                
             }
             // post {
             //     success {
