@@ -20,7 +20,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'cd java-app'
-                sh 'mvn -s ./java-app/settings.xml -DskipTests install'
+                sh 'mvn -s settings.xml -DskipTests install'
             }
             // post {
             //     success {
