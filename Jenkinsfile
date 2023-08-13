@@ -11,7 +11,7 @@ pipeline {
         NEXUS_PASS = 'femi1234'
         RELEASE_REPO = 'java-release'
         CENTRAL_REPO = 'java-maven-central'
-        NEXUSIP = '44.192.89.64'
+        NEXUSIP = '3.237.196.253'
         NEXUSPORT = '8081'
         NEXUS_GRP_REPO = 'java-maven-group'
         NEXUS_LOGIN = 'nexuslogin'
