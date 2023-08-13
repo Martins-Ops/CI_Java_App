@@ -36,12 +36,14 @@ pipeline {
                     sh 'mvn test'
                 }
             }
-            stage('Checkstyle Analysis'){
-                steps {
+        }
+        stage('Checkstyle Analysis') {
+            steps {
+                dir('java-app') {
                     sh 'mvn -s settings.xml checkstyle:checkstyle'
-                    }
+                }
             }
-    }
+        }
 
         // stage('UNIT TEST'){
         //         steps {
