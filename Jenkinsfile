@@ -21,7 +21,6 @@ pipeline {
             steps {
                 dir('java-app'){
                     sh 'mvn -s ./settings.xml -DskipTests install'
-
                 }        
             }
             post {
@@ -32,15 +31,16 @@ pipeline {
             }
         }
         stage('Test') {
-                steps {
+            steps {
+                dir('java-app'){
                     sh 'mvn test'
+                }
+            }
+            stage('Checkstyle Analysis'){
+                steps {
+                    sh 'mvn -s settings.xml checkstyle:checkstyle'
                     }
-                }
-                stage('Checkstyle Analysis'){
-                    steps {
-                        sh 'mvn -s settings.xml checkstyle:checkstyle'
-                        }
-                }
+            }
     }
 
         // stage('UNIT TEST'){
