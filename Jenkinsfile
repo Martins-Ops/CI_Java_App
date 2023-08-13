@@ -13,7 +13,7 @@ pipeline {
         CENTRAL_REPO = 'java-maven-central'
         NEXUSIP = '3.237.106.120'
         NEXUSPORT = '8081'
-        NEXUS_GRP-REPO = 'java-maven-group'
+        NEXUS_GRP_REPO = 'java-maven-group'
         NEXUS_LOGIN = 'nexuslogin'
     }
     stages {
