@@ -6,15 +6,15 @@ pipeline {
     }
 	
     environment {
-        SNAP-REPO = 'java-snapshot'
-        NEXUS-USER = 'admin'
-        NEXUS-PASS = 'femi1234'
-        RELEASE-REPO = 'java-release'
-        CENTRAL-REPO = 'java-maven-central'
+        SNAP_REPO = 'java-snapshot'
+        NEXUS_USER = 'admin'
+        NEXUS_PASS = 'femi1234'
+        RELEASE_REPO = 'java-release'
+        CENTRAL_REPO = 'java-maven-central'
         NEXUSIP = '3.237.106.120'
         NEXUSPORT = '8081'
-        NEXUS-GRP-REPO = 'java-maven-group'
-        NEXUS-LOGIN = 'nexuslogin'
+        NEXUS_GRP-REPO = 'java-maven-group'
+        NEXUS_LOGIN = 'nexuslogin'
     }
     stages {
         stage('Build') {
