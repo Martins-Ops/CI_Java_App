@@ -62,8 +62,8 @@ pipeline {
         //             -Dsonar.java.checkstyle.reportPaths=target/checkstyle-result.xml'''
         //         }
 
-            }
-        }
+        //     }
+        // }
 
         // stage('UNIT TEST'){
         //         steps {
