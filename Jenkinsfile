@@ -11,7 +11,7 @@ pipeline {
         NEXUS_PASS = 'femi1234'
         RELEASE_REPO = 'java-release'
         CENTRAL_REPO = 'java-maven-central'
-        NEXUSIP = '3.237.196.253'
+        NEXUSIP = '3.91.147.57'
         NEXUSPORT = '8081'
         NEXUS_GRP_REPO = 'java-maven-group'
         NEXUS_LOGIN = 'nexuslogin'
@@ -39,13 +39,13 @@ pipeline {
                 }
             }
         }
-        // stage('CODE ANALYSIS with Checkstyle Analysis') {
-        //     steps {
-        //         dir('java-app') {
-        //             sh 'mvn -s settings.xml checkstyle:checkstyle'
-        //         }
-        //     }
-        // }
+        stage('CODE ANALYSIS with Checkstyle Analysis') {
+            steps {
+                dir('java-app') {
+                    sh 'mvn -s settings.xml checkstyle:checkstyle'
+                }
+            }
+        }
         // stage('CODE ANALYSIS with SONARQUBE') {                
         //     environment {
         //         scannerHome = tool "${SONARSCANNER}"
@@ -62,8 +62,8 @@ pipeline {
         //             -Dsonar.java.checkstyle.reportPaths=target/checkstyle-result.xml'''
         //         }
 
-        //     }
-        // }
+            }
+        }
 
         // stage('UNIT TEST'){
         //         steps {
