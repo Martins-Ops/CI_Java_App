@@ -81,7 +81,7 @@ pipeline {
                         artifacts: [
                             [artifactId: 'javaapp' ,
                             classifier: '',
-                            file: '*/vprofile-v2.war',
+                            file: 'java-app/target/vprofile-v2.war',
                             type: 'war']
                         ]
                     )
