@@ -1,3 +1,11 @@
+def COLOR_MAP = [
+    'SUCCESS': '#36a64f',
+    'FAILURE': '#ff0000',
+    'ABORTED': '#bdbdbd',
+    'UNSTABLE': '#ff9900',
+    'NOT_BUILT': '#7f7f7f'
+]
+
 pipeline {
 	agent any	
 	tools {
@@ -5,14 +13,6 @@ pipeline {
         jdk "OracleJDK8"
     }
 
-    def COLOR_MAP = [
-        'SUCCESS': '#36a64f',
-        'FAILURE': '#ff0000',
-        'ABORTED': '#bdbdbd',
-        'UNSTABLE': '#ff9900',
-        'NOT_BUILT': '#7f7f7f'
-    ]
-	
     environment {
         SNAP_REPO = 'java-snapshot'
         NEXUS_USER = 'admin'
