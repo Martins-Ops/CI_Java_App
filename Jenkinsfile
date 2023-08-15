@@ -4,6 +4,14 @@ pipeline {
         maven "MAVEN3"
         jdk "OracleJDK8"
     }
+
+    def COLOR_MAP = [
+        'SUCCESS': '#36a64f',
+        'FAILURE': '#ff0000',
+        'ABORTED': '#bdbdbd',
+        'UNSTABLE': '#ff9900',
+        'NOT_BUILT': '#7f7f7f'
+    ]
 	
     environment {
         SNAP_REPO = 'java-snapshot'
@@ -35,7 +43,7 @@ pipeline {
                 always {
                     echo 'Slack Notifications'
                     slackSend channel: '#jenkins-cicd',
-                        // color: COLOR_MAP[currentBuild.currentResult],
+                        color: COLOR_MAP[currentBuild.currentResult],
                         message: "*${currentBuild.currentResult}:* Job ${env.JOB_NAME} build ${env.BUILD_NUMBER} \n More info at: ${env.BUILD_URL}"
                 }
             }
