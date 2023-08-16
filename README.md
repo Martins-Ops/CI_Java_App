@@ -163,7 +163,7 @@ tick install automatically
 tick environment variables
 Add sonarqube
 Name: sonarserver
-Server URL: http://<private_ip_of_sonar_server>
+Server URL: http://<public_ip_of_sonar_server>
 Server authentication token: we need to create token from sonar website
 ```
 ![](/images/sonartoken.png)
