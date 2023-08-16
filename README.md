@@ -68,26 +68,26 @@ cat /opt/nexus/sonatype-work/nexus3/admin.password
 - We select gear symbol and create repository. This repo will be used to store our release artifacts.
 ```bash
 maven2 hosted
-Name: vprofile-release
+Name: java-release
 Version policy: Release
 ```
 - Next we will create a maven2 proxy repository. Maven will store the dependecies in this repository, whenever we need any dependency for our project it will check this proxy repo in Nexus first and download it for project. Proxy repo will download the dependecies from maven2 central repo at first.
 ```bash
 maven2 proxy
-Name: vpro-maven-central
+Name: java-maven-central
 remote storage: https://repo1.maven.org/maven2/
 ```
 
 - This repo will be used to store our snapshot artifacts. That means any artifact with -SNAPSHOT extension will be stored in this repository.
 ```bash
 maven2 hosted
-Name: vprofile-snapshot
+Name: java-snapshot
 Version policy: Snapshot
 ```
 - Last repo, will be maven2 group type. We will use this repo to group all maven repositories.
 ```bash
 maven2 group
-Name: vpro-maven-group
+Name: java-maven-group
 Member repositories: 
  - vpro-maven-central
  - vprofile-release
@@ -219,3 +219,11 @@ post{
 - Run Build again on Jenkins UI
 
 ![](/images/slack2.JPG)
+
+## Environment Variables
+
+To run this project, you will need to add the following environment variables to your Jenkinsfile
+
+`NEXUS_PASS` Password for Nexus UI
+
+`NEXUS_IP`  Public IP Address of Nexus Server
